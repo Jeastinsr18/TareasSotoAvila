@@ -1,23 +1,20 @@
 """
-test_errores.py
+test_errores_corregidos.py
 
 Propósito:
-- Este archivo existe como EJEMPLO de código con errores de estilo (PEP8),
-  para que flake8 los detecte.
-- Sirve como evidencia de que flake8 está funcionando correctamente.
+- Este archivo muestra el MISMO caso del archivo test_errores.py, pero
+  corregido para cumplir con PEP8.
+- Sirve como evidencia de que se pueden corregir los errores detectados por flake8.
 
-Errores de estilo intencionales en este archivo:
-- Línea demasiado larga (E501): excede el límite recomendado (79 caracteres).
-- Espacios incorrectos en la definición de funciones y asignaciones (E231/E225).
-- Import no utilizado (F401) si se corre flake8 sobre este archivo.
+Correcciones aplicadas:
+- Se evita la línea demasiado larga (E501) dividiendo el string en varias líneas.
+- Se utiliza una tupla de strings dentro de paréntesis para que Python los concatene.
 """
-
-import math  # Import intencionalmente innecesario para demostrar F401 (unused import)
 
 
 def suma(a, b):
     """
-    Suma dos números.
+    Suma dos números e imprime un mensaje.
 
     Parámetros:
     - a: número (int/float)
@@ -27,16 +24,21 @@ def suma(a, b):
     - resultado de a + b
 
     Nota:
-    - Esta función en sí es simple; el objetivo del archivo es mostrar
-      cómo flake8 detecta problemas de estilo en el código.
+    - El mensaje fue dividido en varias líneas para cumplir con el límite
+      de longitud recomendado por PEP8 (evita E501).
     """
-    # Asignación del resultado de la suma
+    # Mensaje dividido en varias líneas (Python concatena strings contiguos en paréntesis)
+    mensaje = (
+        "Esta es una línea larga, pero ahora está correctamente "
+        "dividida para cumplir con el límite de caracteres de PEP 8."
+    )
+
+    # Cálculo de la suma
     resultado = a + b
 
-    # Línea intencionalmente MUY larga para disparar E501 en flake8:
-    # (Esto demuestra que flake8 detecta límites de longitud de línea)
-    mensaje = "Esta es una línea extremadamente larga que viola claramente el límite de setenta y nueve caracteres definido por la guía PEP8"
+    # Impresión del mensaje (solo para mostrar uso de la variable)
+    print(mensaje)
 
-    # Retorna el resultado (mensaje no se usa, a propósito, para mantener el ejemplo)
+    # Retorno del resultado final
     return resultado
 
